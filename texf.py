@@ -12,6 +12,8 @@ def run(cmd: str, spliter=' *', errmsg=True):
         print(var2)
       elif arg[1] == 'v3':
         print(var3)
+      else:
+        print('no variable found')
     elif arg[1] == 'sv':
       if arg[0] == 'v1':
         var1 = arg[2]
@@ -19,6 +21,8 @@ def run(cmd: str, spliter=' *', errmsg=True):
         var2 = arg[2]
       elif arg[0] == 'v3':
         var3 = arg[2]
+      else:
+        print('no variable found')
     else:
       if errmsg:
         print('command error')

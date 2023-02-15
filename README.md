@@ -1,2 +1,2 @@
-# TEXF-python
-TEXF for python
+# TEXF for _Python_
+TEXF coding language in _Python_

@@ -1,15 +1,24 @@
-global var
-var = {'null': 'null'}
+global var1
+global var2
+global var3
 
-def run(cmd: str, spliter=' *', errmsg=False):
+def run(cmd: str, spliter=' *', errmsg=True):
   arg = cmd.split(spliter)
   try:
-    if arg[0] == 'pt':
-      print(arg[1])
     if arg[0] == 'pv':
-      print(var[arg[1]])
-    elif arg[0] == 'vs':
-      var[str(arg[1])] = str(arg[2])
+      if arg[1] == 'v1':
+        print(var1)
+      elif arg[1] == 'v2':
+        print(var2)
+      elif arg[1] == 'v3':
+        print(var3)
+    elif arg[1] == 'sv':
+      if arg[0] == 'v1':
+        var1 = arg[2]
+      elif arg[0] == 'v2':
+        var2 = arg[2]
+      elif arg[0] == 'v3':
+        var3 = arg[2]
     else:
       if errmsg:
         print('command error')
@@ -21,7 +30,7 @@ def run(cmd: str, spliter=' *', errmsg=False):
     else:
       pass
 
-def exe(filepath: str, spliter=' *', errmsg=False):
+def exe(filepath: str, spliter=' *', errmsg=True):
   getfile = open(filepath, 'r')
   for line in getfile:
     run(line, spliter, errmsg)
